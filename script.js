@@ -9,7 +9,7 @@ var interval;
 
 slider.oninput = function () {
   if (rangeEnabled == true) {
-      slider.value = Math.round(this.value / 100) * 300
+      slider.value = Math.round(this.value * 0.01) * 120
     let minutes = Math.floor(this.value / 60);
     let seconds = slider.value % 60;
     let percentage = Math.floor((this.value / 3600) * 100);
@@ -87,7 +87,5 @@ secondButton.onclick = function () {
   clearInterval(interval);
 };
 
-// fa slideru sa de a slide numa la minute intregi
 // sunet
-// valoare intreaga modul 
-// vezi cum faci cu slideru max sa fie precis slideru
+// poate input sa puna useru cat vrea?
