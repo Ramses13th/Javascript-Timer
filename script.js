@@ -9,12 +9,12 @@ var interval;
 
 slider.oninput = function () {
   if (rangeEnabled == true) {
+      slider.value = Math.round(this.value / 100) * 300
     let minutes = Math.floor(this.value / 60);
     let seconds = slider.value % 60;
     let percentage = Math.floor((this.value / 3600) * 100);
     let degrees = Math.floor(percentage * NUM);
     circle.style.background = `conic-gradient(rgb(107, 227, 240) ${degrees}deg, white 0deg)`;
-    console.log(seconds);
     console.log(slider.value);
     if (seconds < 10) {
       text.innerHTML = `${minutes}:0${seconds}`;
@@ -59,8 +59,6 @@ function timer() {
     let percentage = Math.floor((slider.value / 3600) * 100);
     let degrees = Math.floor(percentage * NUM);
 
-    console.log(seconds);
-    console.log(slider.value);
 
     circle.style.background = `conic-gradient(rgb(107, 227, 240) ${degrees}deg, white 0deg)`;
     if (seconds < 10) {
@@ -78,8 +76,6 @@ secondButton.onclick = function () {
   let percentage = Math.floor((slider.value / 3600) * 100);
   let degrees = Math.floor(percentage * NUM);
 
-  console.log(seconds);
-  console.log(slider.value);
   rangeEnabled = true;
   slider.disabled = false;
   button.innerHTML = "start";
@@ -89,4 +85,4 @@ secondButton.onclick = function () {
   clearInterval(interval);
 };
 
-// adauga butoanele de start/stop reset
+// sunet
