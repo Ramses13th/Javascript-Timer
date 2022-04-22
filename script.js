@@ -16,6 +16,8 @@ slider.oninput = function () {
     let degrees = Math.floor(percentage * NUM);
     circle.style.background = `conic-gradient(rgb(107, 227, 240) ${degrees}deg, white 0deg)`;
     console.log(slider.value);
+    
+
     if (seconds < 10) {
       text.innerHTML = `${minutes}:0${seconds}`;
     } else {
@@ -85,4 +87,7 @@ secondButton.onclick = function () {
   clearInterval(interval);
 };
 
-// sunet  
+// fa slideru sa de a slide numa la minute intregi
+// sunet
+// valoare intreaga modul 
+// vezi cum faci cu slideru max sa fie precis slideru
