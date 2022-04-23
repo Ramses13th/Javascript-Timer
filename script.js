@@ -4,7 +4,7 @@ var text = document.getElementById("paragraph");
 var circle = document.querySelector(".circle");
 var button = document.getElementById("button");
 var secondButton = document.getElementById("secondButton");
-var beat = new Audio('/Finish_Sound.wav')
+var beat = new Audio('Finish_Sound.wav')
 const NUM = 360 / 100;
 var rangeEnabled = true;
 var interval;
