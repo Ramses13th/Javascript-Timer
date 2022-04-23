@@ -92,7 +92,7 @@ button.onclick = function () {
       button.setAttribute("class", "btn_disabled");
       interval = setInterval(timer, 1000);
       this.innerHTML = "stop";
-      
+      secondInput.setAttribute('readonly', 'true')
       rangeEnabled = false;
       slider.disabled = true;
     } else if (rangeEnabled == false) {
@@ -101,6 +101,7 @@ button.onclick = function () {
       this.innerHTML = "start";
       rangeEnabled = true;
       secondInput.value = slider.value
+      secondInput.removeAttribute('readonly')
       slider.disabled = false;
       if (secondInput.value > 0) {
         secondInput.style.fontSize = '25px'
@@ -120,6 +121,7 @@ button.onclick = function () {
       this.innerHTML = "start";
       rangeEnabled = true;
       secondInput.value = slider.value
+      secondInput.removeAttribute('readonly')
       slider.disabled = false;
     }
   }
