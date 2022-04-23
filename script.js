@@ -169,6 +169,7 @@ secondButton.onclick = function () {
     4000)
   }
   slider.value = 0;
+  secondInput.removeAttribute('readonly')
   let minutes = Math.floor(slider.value / 60);
   let seconds = slider.value % 60;
   secondInput.value = slider.value
