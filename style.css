@@ -72,6 +72,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 28vh;
     border-radius: 50%;
     background-color: #D5FEFF;
@@ -122,6 +123,18 @@ body {
     height: 5vh;
     border-color: #B78600;
 }
- /* 
-commit pls 
-*/
+
+#numberInput {
+    border: 0;
+    text-align: center;
+    width: 12vh;
+    height: 4vh;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+}
+
+#numberInput::-webkit-outer-spin-button,
+#numberInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
