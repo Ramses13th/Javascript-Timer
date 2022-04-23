@@ -60,11 +60,19 @@ secondInput.oninput = function() {
 
 slider.oninput = function () {
   if (rangeEnabled == true) {
+
+
       slider.value = Math.round(slider.value * 0.02) * 60
     let minutes = Math.floor(slider.value / 60);
     let seconds = slider.value % 60;
     let percentage = Math.floor((slider.value / 3600) * 100);
     let degrees = Math.floor(percentage * NUM ) + (Math.floor(percentage * NUM ) / 100);
+    secondInput.value = slider.value
+    if (secondInput.value > 1) {
+      secondInput.style.fontSize = '25px'
+    } else {
+      secondInput.style.fontSize = '10px'
+    }
 
     circle.style.background = `conic-gradient(rgb(107, 227, 240) ${degrees}deg, white 0deg)`;
     console.log(slider.value);
@@ -160,6 +168,7 @@ secondButton.onclick = function () {
   slider.value = 0;
   let minutes = Math.floor(slider.value / 60);
   let seconds = slider.value % 60;
+  secondInput.value = slider.value
   let percentage = Math.floor((slider.value / 3600) * 100);
   let degrees = Math.floor(percentage * NUM);
 
@@ -171,3 +180,4 @@ secondButton.onclick = function () {
   text.innerHTML = `${minutes}:0${seconds}`;
   clearInterval(interval);
 };
+
