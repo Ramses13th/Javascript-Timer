@@ -134,6 +134,7 @@ function timer() {
     let percentage = Math.floor((slider.value / 3600) * 100);
     let degrees = Math.floor(percentage * NUM ) + (Math.floor(percentage * NUM ) / 100);
 
+    secondInput.value = slider.value
 
     circle.style.background = `conic-gradient(rgb(107, 227, 240) ${degrees}deg, white 0deg)`;
     if (seconds < 10) {
