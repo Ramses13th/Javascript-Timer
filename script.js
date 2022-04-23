@@ -11,6 +11,11 @@ var interval;
 
 
 secondInput.oninput = function() {
+  if (secondInput.value > 0) {
+    secondInput.style.fontSize = '25px'
+  } else {
+    secondInput.style.fontSize = '10px'
+  }
   if (rangeEnabled == true) {
   if (secondInput.value > 0) {
     slider.value = secondInput.value
@@ -79,6 +84,7 @@ button.onclick = function () {
       button.setAttribute("class", "btn_disabled");
       interval = setInterval(timer, 1000);
       this.innerHTML = "stop";
+      
       rangeEnabled = false;
       slider.disabled = true;
     } else if (rangeEnabled == false) {
@@ -86,14 +92,26 @@ button.onclick = function () {
       clearInterval(interval);
       this.innerHTML = "start";
       rangeEnabled = true;
+      secondInput.value = slider.value
       slider.disabled = false;
+      if (secondInput.value > 0) {
+        secondInput.style.fontSize = '25px'
+      } else {
+        secondInput.style.fontSize = '10px'
+      }
     }
   } else if (slider.value == 0) {
     if (rangeEnabled == false) {
+      if (secondInput.value > 0) {
+        secondInput.style.fontSize = '25px'
+      } else {
+        secondInput.style.fontSize = '10px'
+      }
       button.setAttribute("class", "btn");
       clearInterval(interval);
       this.innerHTML = "start";
       rangeEnabled = true;
+      secondInput.value = slider.value
       slider.disabled = false;
     }
   }
@@ -153,7 +171,3 @@ secondButton.onclick = function () {
   text.innerHTML = `${minutes}:0${seconds}`;
   clearInterval(interval);
 };
-
-
-// poate input sa puna useru cat vrea? in secunde
-
